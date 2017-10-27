@@ -25,24 +25,24 @@ Template Name: 文章归档
 .archives ol,ul{list-style: none;}
 </style>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-		<?php while ( have_posts() ) : the_post(); ?>
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<header class="entry-header">				
-					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>				
-					<div class="archives-meta">
-						站点统计：共发表了<?php $count_posts = wp_count_posts(); echo $published_posts = $count_posts->publish;?> 篇文章&nbsp;&nbsp;
-						<?php echo $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->comments");?>条留言&nbsp;&nbsp;
-						浏览量：<?php echo all_view(); ?>&nbsp;&nbsp;
-						最后更新：<?php $last = $wpdb->get_results("SELECT MAX(post_modified) AS MAX_m FROM $wpdb->posts WHERE (post_type = 'post' OR post_type = 'page') AND (post_status = 'publish' OR post_status = 'private')");$last = date('Y年n月j日', strtotime($last[0]->MAX_m));echo $last; ?>
-					</div>
-				</header><!-- .entry-header -->
-				<div class="entry-content"><?php md_archives_list(); ?></div>
-			</article><!-- #page -->
-		<?php endwhile;?>
-		</main><!-- .site-main -->
-	</div><!-- .content-area -->
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
+        <?php while ( have_posts() ) : the_post(); ?>
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <header class="entry-header">
+                    <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+                    <div class="archives-meta">
+                        站点统计：共发表了<?php $count_posts = wp_count_posts(); echo $published_posts = $count_posts->publish;?> 篇文章&nbsp;&nbsp;
+                        <?php echo $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->comments");?>条留言&nbsp;&nbsp;
+                        浏览量：<?php echo all_view(); ?>&nbsp;&nbsp;
+                        最后更新：<?php $last = $wpdb->get_results("SELECT MAX(post_modified) AS MAX_m FROM $wpdb->posts WHERE (post_type = 'post' OR post_type = 'page') AND (post_status = 'publish' OR post_status = 'private')");$last = date('Y年n月j日', strtotime($last[0]->MAX_m));echo $last; ?>
+                    </div>
+                </header><!-- .entry-header -->
+                <div class="entry-content"><?php md_archives_list(); ?></div>
+            </article><!-- #page -->
+        <?php endwhile;?>
+        </main><!-- .site-main -->
+    </div><!-- .content-area -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
