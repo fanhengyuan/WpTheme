@@ -540,7 +540,7 @@ img.alignleft{margin: 0 10px 10px 0;display: inline;}
 	.pagination .current .screen-reader-text {position:static !important;}
 	.screen-reader-text {height:1px;overflow:hidden;position:absolute !important;}
 	.page-numbers {display:none;line-height:25px;padding:5px;}
-	.pagination .page-numbers.current {text-transform:uppercase;}
+	.pagination .page-numbers.current {text-transform:none;}
 	.pagination .current {display:inline-block;}
 	.pagination .prev,.pagination .next {background:#304040;color:#fff;display:inline-block;height:35px;overflow:hidden;position:absolute;}
 	.pagination .prev i,.pagination .next i {padding:5px 15px;}
