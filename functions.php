@@ -628,6 +628,7 @@ function coolwp_remove_open_sans_from_wp_core() {
 add_action( 'init', 'coolwp_remove_open_sans_from_wp_core' );
 
 //圆角背景色标签
+/*
 function colorCloud($text) {
     $text = preg_replace_callback('|<a (.+?)>|i', 'colorCloudCallback', $text);
     return $text;
@@ -642,4 +643,4 @@ function colorCloudCallback($matches) {
     return "<a $text>";
 }
 add_filter('wp_tag_cloud', 'colorCloud', 1);
-
+*/

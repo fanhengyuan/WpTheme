@@ -196,7 +196,7 @@ table > tbody > tr:last-child > td:last-child {-webkit-border-bottom-right-radiu
 /** 移动菜单 **/
 #navigation-toggle {color: #fff;line-height: 40px;padding: 0 8px;}
 #navigation-toggle:hover {color: #2f889a;}
-#sidr-main {position: absolute;	position: fixed;top:0%; height:auto; z-index: 999999;width: 35%; overflow-x: none;overflow-y: auto;font-size: 14px;background:#fff;color:#304040; filter:.9; opacity:.9;}
+#sidr-main {position: absolute;	position: fixed;top:0%; height:auto; z-index: 999999;width: 35%; overflow-x: none;overflow-y: auto;font-size: 14px;background:#fff;color:#304040; filter:alpha(opacity=90); opacity:.9;}
 #sidr-main {padding: 0;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;}
 .sidr-inner {}
 .sidr.right {left: auto;right: -320px;}
@@ -615,7 +615,7 @@ p.form-submit{text-align:center}
 
 
 /** 滚屏 **/
-#scroll {width: 35px;float: right;position: fixed;right: 10px;bottom: 100px;z-index: 9999; filter:.8; opacity:.8;}
+#scroll {width: 35px;float: right;position: fixed;right: 10px;bottom: 100px;z-index: 9999; filter:alpha(opacity=80); opacity:.8;}
 #scroll li a {background: #304040;font-size: 24px;color: #fff;width: 35px;height: 35px;line-height: 35px;text-align: center;margin-top: 10px;display: block;cursor: pointer;border-radius: 4px;}
 #scroll li i {font-size: 24px;line-height: 35px;}
 #scroll li a:hover {background: #0AB59B;color: #fff;transition: all 0.2s ease-in 0s;}
@@ -710,3 +710,16 @@ p.form-submit{text-align:center}
 .contact_way .icon:hover{
     font-size:35px;
 }
+
+.tagcloud{padding: 12px 13px 10px 15px;}
+.tagcloud a:nth-child(9n){background-color: #4A4A4A;}
+.tagcloud a:nth-child(9n+1){background-color: #428BCA;}
+.tagcloud a:nth-child(9n+2){background-color: #5CB85C;}
+.tagcloud a:nth-child(9n+3){background-color: #D9534F;}
+.tagcloud a:nth-child(9n+4){background-color: #567E95;}
+.tagcloud a:nth-child(9n+5){background-color: #B433FF;}
+.tagcloud a:nth-child(9n+6){background-color: #00ABA9;}
+.tagcloud a:nth-child(9n+7){background-color: #B37333;}
+.tagcloud a:nth-child(9n+8){background-color: #FF6600;}
+.tagcloud a{opacity: 0.60;filter:alpha(opacity=60);color: #fff;background-color: #428BCA;display: inline-block;margin: 0 5px 5px 0;padding: 0 6px;line-height: 21px; border:none !important; }
+.tagcloud a:hover{opacity: 1;filter:alpha(opacity=100);}
