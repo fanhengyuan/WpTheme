@@ -21,8 +21,10 @@
 <!-- 返回顶部 -->
 <ul id="scroll">
     <li><a onclick="hiddenwidget(this)" href="javascript:;" class="hidden-widget" title="隐藏侧边栏"><i class="iconfont icon-magnifyplus"></i></a></li>
+    <!--
     <li><a class="scroll-top" title="返回顶部"><i class="iconfont icon-chevronup"></i></a></li>
     <li><a class="scroll-bottom" title="转到底部"><i class="iconfont icon-chevrondown"></i></a></li>
+    -->
 </ul>
 
 <!-- 百度分享 -->

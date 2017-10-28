@@ -196,7 +196,7 @@ table > tbody > tr:last-child > td:last-child {-webkit-border-bottom-right-radiu
 /** 移动菜单 **/
 #navigation-toggle {color: #fff;line-height: 40px;padding: 0 8px;}
 #navigation-toggle:hover {color: #2f889a;}
-#sidr-main {position: absolute;	position: fixed;top: 60px;height:auto;	z-index: 999999;width: 60%;	overflow-x: none;overflow-y: auto;font-size: 14px;background:#fff;color:#304040}
+#sidr-main {position: absolute;	position: fixed;top:0%; height:auto; z-index: 999999;width: 35%; overflow-x: none;overflow-y: auto;font-size: 14px;background:#fff;color:#304040; filter:.9; opacity:.9;}
 #sidr-main {padding: 0;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;}
 .sidr-inner {}
 .sidr.right {left: auto;right: -320px;}
@@ -615,7 +615,7 @@ p.form-submit{text-align:center}
 
 
 /** 滚屏 **/
-#scroll {width: 35px;float: right;position: fixed;right: 10px;bottom: 100px;z-index: 9999;}
+#scroll {width: 35px;float: right;position: fixed;right: 10px;bottom: 100px;z-index: 9999; filter:.8; opacity:.8;}
 #scroll li a {background: #304040;font-size: 24px;color: #fff;width: 35px;height: 35px;line-height: 35px;text-align: center;margin-top: 10px;display: block;cursor: pointer;border-radius: 4px;}
 #scroll li i {font-size: 24px;line-height: 35px;}
 #scroll li a:hover {background: #0AB59B;color: #fff;transition: all 0.2s ease-in 0s;}
