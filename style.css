@@ -269,6 +269,7 @@ table > tbody > tr:last-child > td:last-child {-webkit-border-bottom-right-radiu
 /** 首页显示blog样式 **/
 .art-t{padding:0 120px 0 20px;font-size:18px;line-height:40px;border-bottom:1px #ddd solid;}
 .art-main{color:#304040;word-break:break-all;}
+.art-desc .content_img{min-height:150px;margin:20px;}
 .art-desc .art-img img{float: left;border-radius:2px;margin-right:20px;border: 1px solid #D9D9D9;border-radius: 2px 2px 2px 2px;height: 150px;padding: 5px;width: 250px;}
 .art-desc .art-img  :hover{transition-duration: .2s;border-radius: 2px;box-shadow: 0 2px 2px rgba(0, 0, 0, .25);}
 .art-pub{width:auto;float: right;font-size:14px;display:block}
@@ -661,14 +662,41 @@ p.form-submit{text-align:center}
     #primary {width: 100%;}
     #sidebar,.art-desc .more,.art-pub ,.art-info .tag,.ias-trigger,.ias-trigger-next,.bottom-nav{display: none!important;}
     .single-content embed {height: 280px;width:99%;max-width:100%;}
+    /*
     .art-t{padding:0 10px;text-align:center}
     .art-desc .art-img img{width:100%;max-width:100%;height:auto;float:none;text-align:center;margin:0 auto;}
-    .art-main{font-size:1em;max-height:84px;overflow:hidden;float:none}
+    .art-main{font-size:1em;max-height:84px;overflow:hidden;float:none}*/
     .art-info{width:100%}
     .art-desc .art-img  :hover{transition-duration: .2s;border-radius: 2px;box-shadow: none;}
     .thumbnail a img{width:125px;height:75px}
+
     /** 隐藏右侧操作按钮 **/
     #scroll .hidden-widget{display:none;}
+    /** new **/
+    .swiper-container {max-height: 160px;}
+    .art-t{
+        padding:0px;
+        margin: 2%;
+        border-bottom: none;
+        text-align:center;
+        font-size: 1em;
+        line-height: 1.3em;
+    }
+    .art-desc .content_img {min-height: 50%;}
+    .art-main{
+        font-size: .5em;
+        /*line-height: .1em;*/
+        text-overflow:ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+    }
+    .art-desc .art-img img{
+        width:50%;
+        height:auto;
+    }
+    /** end **/
 }
 
 /** 底部左边播放器 **/
@@ -689,7 +717,7 @@ p.form-submit{text-align:center}
 #comments .nav-previous, #comments .nav-next {display: none;}
 @media screen and (max-width: 550px) {
     .ias-trigger-next {float: inherit;text-align: center;margin: -10px auto 0;padding: 10px 11px;}
-    .ias-spinner {float: inherit;width: 98%;	margin: 0 auto;height: 35px;}
+    .ias-spinner {float: inherit;width: 98%;margin: 0 auto;height: 35px;}
 }
 
 /** 广告样式 **/

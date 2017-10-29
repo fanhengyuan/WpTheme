@@ -11,7 +11,7 @@
             </div>
             <div class="clear"></div>
 
-            <div style="min-height:150px;margin:20px">
+            <div class="content_img">
                 <div class="art-img"><?php get_thumbnail(300,180) ?></div>
                 <span class="art-main"><?php if (has_excerpt()){ echo wp_trim_words( get_the_excerpt(), 200, '...' );} else { echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 200,"..."); } ?></span>
             </div>
