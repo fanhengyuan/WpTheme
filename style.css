@@ -267,7 +267,17 @@ table > tbody > tr:last-child > td:last-child {-webkit-border-bottom-right-radiu
 .archive-meta{border:1px solid #ddd;padding:10px;border-top:none;border-bottom-left-radius:3px;border-bottom-right-radius:3px;}
 
 /** 首页显示blog样式 **/
-.art-t{padding:0 120px 0 20px;font-size:18px;line-height:40px;border-bottom:1px #ddd solid;}
+.art-t{
+    padding:0 0 0 2%;
+    font-size:16px;
+    line-height:40px;
+    border-bottom:1px #ddd solid;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    text-overflow:ellipsis;
+    overflow: hidden;
+}
 .art-main{color:#304040;word-break:break-all;}
 .art-desc .content_img{min-height:150px;margin:20px;}
 .art-desc .art-img img{float: left;border-radius:2px;margin-right:20px;border: 1px solid #D9D9D9;border-radius: 2px 2px 2px 2px;height: 150px;padding: 5px;width: 250px;}
