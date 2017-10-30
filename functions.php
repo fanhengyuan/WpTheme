@@ -138,27 +138,37 @@ function md_scripts() {
 add_action( 'wp_enqueue_scripts', 'md_scripts' );
 
 //自动缩略图
-function get_thumbnail($width,$height) {
-global $post;
-$content = $post->post_content;
-$default_img = "https://blog.aiti.me/wp-content/plugins/a3-lazy-load/assets/css/loading.gif";
-// $soImages = '~<img [^>]* />~';
-preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $strResult, PREG_PATTERN_ORDER);
-$n = count($strResult[1]);
-//判断图片是否已经用timthumb显示
-$m = substr_count($strResult[1][0], '/timthumb.php');
-if ($n > 0){
-    // 如果文章内包含有图片，就用第一张图片做为缩略图
-    if ($m ==1 ) {
-        echo ''.preg_replace("/&h.*zc=1/","",$strResult[1][0]).'&amp;h='.$height.'&amp;w='.$width.'&amp;zc=1';
-    } else { //如果没有timthumb则补充
-    $pic_pre = get_bloginfo('template_url').'/timthumb.php?src='.$strResult[1][0].'&amp;h='.$height.'&amp;w='.$width;
-    echo '<a href="'.get_permalink().'"><img class="lazy-loaded" src="'.$default_img.'" alt="'.$post->post_title .'" data-lazy-type="image" data-src="'.$pic_pre.'&amp;zc=1"/></a>';
-    }
-} else { // 如果文章内没有图片，则用默认的图片
-    $random = mt_rand(1, 25);
-    $pic_pre = get_template_directory_uri().'/img/random/'. $random;
-    echo '<a href="'.get_permalink().'"><img class="lazy-loaded" src="'.$default_img.'" alt="'.$post->post_title .'" data-lazy-type="image" data-src="'.$pic_pre.'.jpg"/></a>';
+function get_thumbnail($width, $height) {
+    global $post;
+    $content = $post->post_content;
+
+    $default_img = "/wp-content/plugins/a3-lazy-load/assets/css/loading.gif";
+
+    # 是否存在特色图像
+    $thumbnail_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium'); // thumbnail medium
+    if( $thumbnail_image_url ) { # 存在
+        echo '<a href="'.get_permalink().'"><img class="lazy-loaded" src="'.$default_img.'" alt="'.$post->post_title .'" data-lazy-type="image" data-src="'.$thumbnail_image_url[0].'"/></a>';
+    }else {
+        # 不存在
+        preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $strResult, PREG_PATTERN_ORDER);
+        $n = count($strResult[1]);
+
+        //判断图片是否已经用timthumb显示
+        $m = substr_count($strResult[1][0], '/timthumb.php');
+        if ( $n > 0 ){
+            // 如果文章内包含有图片，就用第一张图片做为缩略图
+            if ( $m == 1 ) {
+                echo ''.preg_replace("/&h.*zc=1/","",$strResult[1][0]).'&amp;h='.$height.'&amp;w='.$width.'&amp;zc=1';
+            } else {
+                //如果没有timthumb则补充
+                $pic_pre = get_bloginfo('template_url').'/timthumb.php?src='.$strResult[1][0].'&amp;h='.$height.'&amp;w='.$width;
+                echo '<a href="'.get_permalink().'"><img class="lazy-loaded" src="'.$default_img.'" alt="'.$post->post_title .'" data-lazy-type="image" data-src="'.$pic_pre.'&amp;zc=1"/></a>';
+            }
+        } else { // 如果文章内没有图片，则用默认的图片
+            $random = mt_rand(1, 25);
+            $pic_pre = get_template_directory_uri().'/img/random/'. $random;
+            echo '<a href="'.get_permalink().'"><img class="lazy-loaded" src="'.$default_img.'" alt="'.$post->post_title .'" data-lazy-type="image" data-src="'.$pic_pre.'.jpg"/></a>';
+        }
     }
 }
 
