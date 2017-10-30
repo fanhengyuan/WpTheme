@@ -684,8 +684,8 @@ p.form-submit{text-align:center}
     }
     .art-desc .content_img {min-height: 100px;}
     .art-main{
-        font-size: .8em;
-        line-height: .8em;
+        font-size: .9em;
+        line-height: 1.1em;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 5;
