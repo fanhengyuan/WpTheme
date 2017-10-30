@@ -14,7 +14,7 @@
             ?>
     </div>
     <div id="contentinfo">
-        Copyright © <?php date_default_timezone_set('PRC'); echo date('Y') ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a> All rights reserved. | Theme by <a  href="https://github.com/fanhengyuan/WpTheme" title="米鼠" target="_blank">Mydream</a> | <?php echo get_option( 'zh_cn_l10n_icp_num' );?>
+        Copyright © <?php date_default_timezone_set('PRC'); echo date('Y') ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a> All rights reserved.  Theme by <a  href="https://github.com/fanhengyuan/WpTheme" title="米鼠" target="_blank">Mydream</a><?php echo get_option( 'zh_cn_l10n_icp_num' );?>
     </div>
 </footer>
 
