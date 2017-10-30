@@ -627,20 +627,7 @@ function coolwp_remove_open_sans_from_wp_core() {
 }
 add_action( 'init', 'coolwp_remove_open_sans_from_wp_core' );
 
-//圆角背景色标签
-/*
-function colorCloud($text) {
-    $text = preg_replace_callback('|<a (.+?)>|i', 'colorCloudCallback', $text);
-    return $text;
+//使WordPress支持post thumbnail
+if ( function_exists( 'add_theme_support' ) ) {
+    add_theme_support( 'post-thumbnails' );
 }
-function colorCloudCallback($matches) {
-    $text = $matches[1];
-    $colors = array('F99','C9C','F96','6CC','6C9','37A7FF','B0D686','E6CC6E');
-    $color=$colors[dechex(rand(0,7))];
-    $pattern = '/style=(\'|\")(.*)(\'|\")/i';
-    $text = preg_replace($pattern, "style=\"display: inline-block; *display: inline; *zoom: 1; color: #fff; padding: 1px 5px; margin: 0 5px 5px 3px; background-color: #{$color}; border-radius: 3px; -webkit-transition: background-color .4s linear; -moz-transition: background-color .4s linear; transition: background-color .4s linear;\"", $text);
-    $pattern = '/style=(\'|\")(.*)(\'|\")/i';
-    return "<a $text>";
-}
-add_filter('wp_tag_cloud', 'colorCloud', 1);
-*/
