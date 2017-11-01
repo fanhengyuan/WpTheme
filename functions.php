@@ -268,7 +268,7 @@ remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );//rel=pre
 remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0 );//rel=shortlink
 remove_action('wp_head', 'rel_canonical' );
 remove_action('wp_head', 'wp_resource_hints', 2 ); //禁止WordPress头部加载s.w.org
-add_filter('show_admin_bar', '__return_false'); //禁止WordPress头部adminbar
+#add_filter('show_admin_bar', '__return_false'); //禁止WordPress头部adminbar
 add_filter('pre_option_link_manager_enabled', '__return_true' );//添加友情链接设置
 add_filter( 'wp_revisions_to_keep', 'specs_wp_revisions_to_keep', 10, 2 );//关闭文章修订
 function specs_wp_revisions_to_keep( $num, $post ) {
