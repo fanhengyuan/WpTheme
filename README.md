@@ -1,6 +1,6 @@
 感谢 [ricemouse](https://www.ricemouse.com/27.html) 提供主题
 
-我的博客 [fhy's blog](https://blog.aiti.me)
+我的博客 [IT乐园](https://aiti.fun)
 
 ## 2017.10.30
 + 修改移动端文章列表
